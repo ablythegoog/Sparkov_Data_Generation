@@ -1,0 +1,4 @@
+faker
+numpy
+datetime
+pandas

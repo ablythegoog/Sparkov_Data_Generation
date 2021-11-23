@@ -18,3 +18,5 @@ demographics.pyc
 demographics.pyc
 *.pyc
 Notebooks
+.DS_Store
+output/**

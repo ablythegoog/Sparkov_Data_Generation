@@ -6,7 +6,30 @@
 
 This code is heavily modified, but based on original code by [Josh Plotkin](https://github.com/joshplotkin/data_generation). Change log of modifications to original code are below.
 
+
+```
+# git clone ...
+cd Sparkov_Data_Generation
+mkdir output
+# Ensure running python 3
+python --version
+pip install -r requirements.txt
+python datagen_customer.py 10000 4144 profiles/main_config.json >> output/customers.csv
+python datagen_transaction.py output/customers.csv profiles/adults_2550_female_rural.json 1-1-2020 12-31-2020 >> output/adults_2550_female_rural.csv
+# may take 15 minutes (or more) to complete
+# if this works then run
+rm -rf output/*
+chmod +x create_all_transactions.sh
+./create_all_transactions.sh
+# this will thread many python processes in the background. it may take a lot of CPU and a while.
+```
+
 ### Modifications:
+
+#### Aaron Blythe Fork
+
+* Add requirements.txt
+* Update create_all_transactions.sh to run out of the box.
 
 #### v 0.4
 * Only surface-level changes done in scripts so that simulation can be done using Python3
